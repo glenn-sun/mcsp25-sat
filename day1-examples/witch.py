@@ -12,18 +12,18 @@ D_true = Bool('D_true')
 
 constraints = []
 
-# Athena: Ellie is a toad. I am not a toad.
+# A: B is a toad. I am not a toad.
 constraints.append(A_true == B_witch & ~A_witch)
 
-# Ellie: Linsey is exactly as honest as I am.
+# B: C is exactly as honest as I am.
 constraints.append(B_true == (C_true == B_true))
 
-# Linsey: The number of toads is even. Athena and I are not both truthtellers. I am not a toad.
+# C: The number of toads is even. A and I are not both truthtellers. I am not a toad.
 even_witches = ~Xor(A_witch, Xor(B_witch, Xor(C_witch, D_witch)))
 
 constraints.append(C_true == (even_witches & ~(A_true & C_true) & ~C_witch))
 
-# Thu: At least one of the toads is a truthteller. 
+# D: At least one of the toads is a truthteller. 
 constraints.append(D_true == ((A_true & A_witch) | (B_true & B_witch) | (C_true & C_witch) | (D_true & D_witch)))
 
 def model_to_witches_and_truthtellers(model):
