@@ -60,7 +60,7 @@ for box in boxes:
         for (x1, y1), (x2, y2) in combinations(box, 2):
             constraints.append(~(cell[x1][y1].has(i) & cell[x2][y2].has(i)))
 
-nikitas_nemesis = [
+puzzle = [
     [0, 1, 0, 8, 0, 4, 9, 0, 2],
     [0, 0, 7, 0, 0, 0, 6, 0, 0],
     [0, 4, 0, 2, 7, 0, 0, 0, 0],
@@ -82,7 +82,7 @@ def board_to_constraints(board):
 
 print(len(constraints))
 
-constraints += board_to_constraints(nikitas_nemesis)
+constraints += board_to_constraints(puzzle)
 
 def model_to_board(model):
     board = [[0 for x in range(9)] for y in range(9)]
