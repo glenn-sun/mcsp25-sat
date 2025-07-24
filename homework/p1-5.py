@@ -1,4 +1,4 @@
-# Problem 1.6
+# Problem 1.5
 # Implement your solution to the n-queens puzzle from Problem 1.2.
 
 # The Z3 solver

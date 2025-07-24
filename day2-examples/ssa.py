@@ -1,4 +1,4 @@
-# Warning: This code contains syntax not included in 
+# Warning: This file contains syntax not included in 
 # standard Python. It will not run.
 
 def division(x, y):
@@ -11,7 +11,7 @@ def division(x, y):
     assert x == y * q + r
     assert 0 <= r and r < abs(y)
 
-    return (q, x)
+    return (q, r)
 
 # "assume P" means that all future assertions of the form
 # "assert Q" should be interpreted as "assert Q or not P".
